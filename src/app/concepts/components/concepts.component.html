@@ -2,12 +2,15 @@
   <p>Data received from child comp: {{dataReceivedFromCEB}}</p>
   <nav>
     <div class="nav nav-tabs" id="nav-tab" role="tablist">
-      <a class="nav-item nav-link active" id="basic-databinding-tab" data-toggle="tab" href="#basic-databinding"
+      <a class="nav-item nav-link active"  data-toggle="tab" href="#basic-databinding"
         role="tab" aria-controls="basic-databinding" aria-selected="true">Basic Data Binding</a>
-      <a class="nav-item nav-link" id="cpb-tab-tab" data-toggle="tab" href="#cpb-tab" role="tab" aria-controls="cpb-tab"
+      <a class="nav-item nav-link" data-toggle="tab" href="#cpb-tab" role="tab" aria-controls="cpb-tab"
         aria-selected="false">Custom Prop Binding</a>
-      <a class="nav-item nav-link" id="ceb-tab-tab" data-toggle="tab" href="#ceb-tab" role="tab" aria-controls="ceb-tab"
+      <a class="nav-item nav-link" data-toggle="tab" href="#ceb-tab" role="tab" aria-controls="ceb-tab"
         aria-selected="false">Child to Parent Comp Communication</a>
+      <a class="nav-item nav-link" data-toggle="tab" 
+        href="#directives-tab" role="tab" aria-controls="directives-tab"
+        aria-selected="false">Directives</a>
     </div>
   </nav>
   <div class="tab-content" id="nav-tabContent">
@@ -79,6 +82,61 @@
       <!-- step4: work with the event handler in the parent comp -->
       <app-ceb (profileLoaded)="profileLoadedHandler($event)"></app-ceb>
       
+
+    </div>
+
+    <div class="tab-pane fade" id="directives-tab" role="tabpanel"
+      aria-labelledby="directives-tab">
+      <h2>Directives</h2>
+
+      <pre>
+        Directives
+          ---
+          some instructions to the DOM 
+
+          1. Attribute Directives 
+              routerLink, routerLinkActive, routerLinkActiveOptions 
+          
+          2. Structural Directives 
+              going to impact structural layer of the page. 
+              *ngIf, *ngFor, ngSwitch 
+      </pre>
+
+      <h4>Structural Directives</h4>
+      <h6>*ngIf</h6>
+      
+      <div class="alert alert-success" *ngIf="isLoggedIn; else NotAuthWrapper">
+        Wow.. you can access the page 
+      </div>
+      
+      <!-- Template Reference -->
+      <ng-template #NotAuthWrapper>
+        <div class="alert alert-danger">
+          sorry! you are not allowed to access
+        </div>
+      </ng-template>
+
+      
+      <hr>
+      <h6>*ngFor</h6>
+      <ul>
+        <li *ngFor="let skill of devSkillSetList">
+          <a href='#'>{{ skill }}</a>
+        </li>
+      </ul>
+      <p>Todo: Find index in the above loop</p>
+
+      <hr>
+      <p>Todo: ngSwitch </p>
+
+      <hr> 
+      <p>Custom Attribute Directvices -- colorizer</p>
+      
+      <div appColorizer>
+        testing the colorizer directive 
+        <p>I am the para</p>
+        <button>Click me</button>
+      </div>
 
     </div>
 

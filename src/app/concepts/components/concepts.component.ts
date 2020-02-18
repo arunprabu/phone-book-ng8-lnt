@@ -40,6 +40,9 @@ export class ConceptsComponent implements OnInit, AfterViewInit {
   // static tru will make cebData available in ngOnInit()
   @ViewChild(CebComponent, { static: false }) cebData;
 
+  // directives related
+  isLoggedIn: boolean = true;
+
   constructor() {
   }
 
