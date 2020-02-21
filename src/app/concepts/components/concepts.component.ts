@@ -41,7 +41,7 @@ export class ConceptsComponent implements OnInit, AfterViewInit {
   @ViewChild(CebComponent, { static: false }) cebData;
 
   // directives related
-  isLoggedIn: boolean = true;
+  isLoggedIn = true;
 
   constructor() {
   }

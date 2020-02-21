@@ -16,6 +16,9 @@ import { CebComponent } from './concepts/components/ceb/ceb.component';
 import { ColorizerDirective } from './concepts/directives/colorizer.directive';
 import { ContactModule } from './contacts/contact.module';
 import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
+import { ProductsModule } from './products/products.module';
+import { LoginComponent } from './auth/components/login/login.component';
+import { SignupComponent } from './auth/components/signup/signup.component';
 
 // Decorator
 // Main Switching Box
@@ -31,13 +34,16 @@ import { PageNotFoundComponent } from './shared/components/page-not-found/page-n
     CpbComponent,
     CebComponent,
     ColorizerDirective,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     ContactModule,
+    ProductsModule,
     AppRoutingModule
   ],
   providers: [],
